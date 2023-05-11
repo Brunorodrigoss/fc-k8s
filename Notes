@@ -22,3 +22,11 @@ Kind:
 
   kubectl config get-clusters
   kubectl config use-context <CLUSTER NAME>
+
+
+  kubectl apply -f k8s/pod.yaml
+
+  kubectl port-forward pod/goserver 8000:80
+
+  kubectl get pods
+  kubectl delete pod goserver
