@@ -34,3 +34,8 @@ Kind:
   kubectl apply -f k8s/replicaset.yaml
 
   kubectl describe pod <POD NAME>
+
+  kubectl get replicasets
+  kubectl delete replicaset <REPLICASET NAME>
+
+  kubectl get deployments
