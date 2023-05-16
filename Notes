@@ -30,3 +30,7 @@ Kind:
 
   kubectl get pods
   kubectl delete pod goserver
+
+  kubectl apply -f k8s/replicaset.yaml
+
+  kubectl describe pod <POD NAME>
