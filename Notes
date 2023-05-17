@@ -39,3 +39,7 @@ Kind:
   kubectl delete replicaset <REPLICASET NAME>
 
   kubectl get deployments
+
+  kubectl rollout history deployment goserver
+  kubectl rollout undo deployment goserver
+  kubectl rollout undo deployment goserver --to-revision=1
