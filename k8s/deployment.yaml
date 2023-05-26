@@ -16,19 +16,20 @@ spec:
     spec:
       containers:
         - name: goserver
-          image: "brunorodrigoss/hello-go:v4.5"
+          image: "brunorodrigoss/hello-go:v5.2"
           envFrom:
             - configMapRef:
                 name: goserver-env
-          # env:
-          #   - name: NAME
-          #     valueFrom:
-          #       configMapKeyRef:
-          #         name: goserver-env
-          #         key: NAME
 
-          #   - name: AGE
-          #     valueFrom:
-          #       configMapKeyRef:
-          #         name: go
-          #         key: AGE
+          volumeMounts:
+            - mountPath: "/go/mydummyconfig"
+              name: config
+              readOnly: true
+
+      volumes:
+        - name: config
+          configMap:
+            name: configmap-myconfig
+            items:
+              - key: environments
+                path: "myconfig.txt"

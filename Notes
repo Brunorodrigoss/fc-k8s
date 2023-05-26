@@ -49,3 +49,8 @@ Kind:
   kubectl port-forward service/goserver-service 8000:80
 
   kubectl proxy --port=8080
+
+  kubectl apply -f k8s/configmap-myconfig.yaml
+  kubectl get configmaps
+  kubectl exec -it goserver-78b8fdf887-stm75 -- bash
+  goserver-56bd7798dc-shx88
