@@ -54,3 +54,6 @@ Kind:
   kubectl get configmaps
   kubectl exec -it goserver-78b8fdf887-stm75 -- bash
   goserver-56bd7798dc-shx88
+
+  kubectl apply -f k8s/secret.yaml
+  http://localhost:9000/secret
