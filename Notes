@@ -57,3 +57,5 @@ Kind:
 
   kubectl apply -f k8s/secret.yaml
   http://localhost:9000/secret
+
+  kubectl apply -f k8s/deployment.yaml && watch -n1 kubectl get pods
