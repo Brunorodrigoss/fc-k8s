@@ -59,3 +59,17 @@ Kind:
   http://localhost:9000/secret
 
   kubectl apply -f k8s/deployment.yaml && watch -n1 kubectl get pods
+
+  HPA => Horizontal Pod Autoscaler
+    - Install metrics-server (https://github.com/kubernetes-sigs/metrics-server)
+      - wget https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+      - rename components to metrics-server
+      - open the file and find by Deployment section
+        - According to the issue (https://github.com/kubernetes-sigs/metrics-server/issues/525#issuecomment-746809546) we need to add an argument (spec containers args) to run the metrics-server using kind
+          - --kubelet-insecure-tls
+
+      After change the file we need to apply this configuration:
+      kubectl apply -f k8s/metrics-server.yaml
+
+      To check if the metrics-server was installed find the metrics server (v1beta1.metrics.k8s.io) after this command:
+      kubectl get apiservices
