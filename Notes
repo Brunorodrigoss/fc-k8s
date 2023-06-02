@@ -74,5 +74,7 @@ Kind:
       To check if the metrics-server was installed find the metrics server (v1beta1.metrics.k8s.io) after this command:
       
 ---
-      
+
 kubectl top pod
+
+kubectl get hpa
