@@ -72,4 +72,7 @@ Kind:
       kubectl apply -f k8s/metrics-server.yaml
 
       To check if the metrics-server was installed find the metrics server (v1beta1.metrics.k8s.io) after this command:
-      kubectl get apiservices
+      
+---
+      
+kubectl top pod
