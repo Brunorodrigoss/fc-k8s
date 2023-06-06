@@ -83,3 +83,9 @@ kubectl get hpa
 https://github.com/fortio/fortio
 
 kubectl run -it fortio --rm --image=fortio/fortio -- load -qps 800 -t 120s -c 70 "http://goserver-service:8080/healthz"
+
+---
+kubectl get storageclasses
+kubectl config get-contexts
+kubectl apply -f k8s/pvc.yaml 
+kubectl get pvc

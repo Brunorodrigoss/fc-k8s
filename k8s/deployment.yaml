@@ -60,11 +60,18 @@ spec:
                 name: goserver-secret
 
           volumeMounts:
+            - mountPath: "/go/pvc"
+              name: goserver-volume
+
             - mountPath: "/go/mydummyconfig"
               name: config
               readOnly: true
 
       volumes:
+        - name: goserver-volume
+          persistentVolumeClaim:
+            claimName: goserver-pvc
+
         - name: config
           configMap:
             name: configmap-myconfig
