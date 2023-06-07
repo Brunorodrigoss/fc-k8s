@@ -95,3 +95,4 @@ Stateless (Is not necessary to store the information)
 Stateful (The information need to be stored) Eg. Database
 
 kubectl scale statefulset mysql --replicas=10
+ping mysql-3.mysql-h
