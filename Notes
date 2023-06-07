@@ -89,3 +89,9 @@ kubectl get storageclasses
 kubectl config get-contexts
 kubectl apply -f k8s/pvc.yaml 
 kubectl get pvc
+
+---
+Stateless (Is not necessary to store the information)
+Stateful (The information need to be stored) Eg. Database
+
+kubectl scale statefulset mysql --replicas=10
